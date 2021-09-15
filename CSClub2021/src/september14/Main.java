@@ -13,7 +13,7 @@ public class Main {
 			int slashIndex = line.indexOf('/');
 			int num = Integer.parseInt(line.substring(0, slashIndex));
 			int denom = Integer.parseInt(line.substring(slashIndex + 1));
-			int g = gcd(num, denom);
+			int g = GCD.gcd(num, denom);
 			num /= g;
 			denom /= g;
 			double d = (double) num / denom;
@@ -28,32 +28,5 @@ public class Main {
 			System.out.println(str);
 		}
 	}
-	
-//	static int gcd(int a, int b) {
-//		while(a != b) {
-//			if(a > b)
-//				a = a - b;
-//			else
-//				b = b - a;
-//		}
-//		return a;
-//	}
-	
-	static int gcd(int a, int b) {
-		while(b != 0) {
-			int temp = b;
-			b = a % b;
-			a = temp;
-		}
-		return a;
-	}
-	
-//	static int gcd(int a, int b) {
-//		int smaller = Math.min(a, b);
-//		for(int d = smaller; d >= 1; d--)
-//			if(a % d == 0 && b % d == 0)
-//				return d;
-//		return -1;
-//	}
 	
 }
