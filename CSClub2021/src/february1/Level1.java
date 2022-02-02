@@ -1,4 +1,4 @@
-package february2;
+package february1;
 
 import java.util.*;
 import java.util.stream.Collectors;
