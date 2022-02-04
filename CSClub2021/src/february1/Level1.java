@@ -18,7 +18,7 @@ public class Level1 {
 		
 		/*
 		
-		//Approach 2: Store the numbers in a list, then loop over your list  and print them out.
+		//Approach 2: Store the numbers in a list, then loop over your list and print them out.
 		Scanner in = new Scanner(System.in);
 		List<Integer> nums = new ArrayList<>();
 		while(in.hasNextInt())
