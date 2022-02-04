@@ -36,7 +36,7 @@ public class Level1 {
 			nums.add(in.nextInt());
 		//print out all numbers except the last, each followed by a space:
 		for(int i = 0; i < nums.size() - 1; i++)
-			System.out.println(nums.get(i) + " ");
+			System.out.print(nums.get(i) + " ");
 		//print out last number:
 		System.out.println(nums.get(nums.size() - 1));
 		
