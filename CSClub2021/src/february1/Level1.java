@@ -18,7 +18,7 @@ public class Level1 {
 		
 		/*
 		
-		//Approach 2: Store the numbers in a list, then loop over your list  and print them out.
+		//Approach 2: Store the numbers in a list, then loop over your list and print them out.
 		Scanner in = new Scanner(System.in);
 		List<Integer> nums = new ArrayList<>();
 		while(in.hasNextInt())
@@ -36,7 +36,7 @@ public class Level1 {
 			nums.add(in.nextInt());
 		//print out all numbers except the last, each followed by a space:
 		for(int i = 0; i < nums.size() - 1; i++)
-			System.out.println(nums.get(i) + " ");
+			System.out.print(nums.get(i) + " ");
 		//print out last number:
 		System.out.println(nums.get(nums.size() - 1));
 		
