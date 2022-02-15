@@ -8,7 +8,7 @@ public class Level3 {
 
 	public static void main(String[] args) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		solve(br.lines().collect(Collectors.toCollection(ArrayList::new)));
+		System.out.println(solve(br.lines().collect(Collectors.toCollection(ArrayList::new))));
 	}
 
 	public static String solve(List<String> lines) {

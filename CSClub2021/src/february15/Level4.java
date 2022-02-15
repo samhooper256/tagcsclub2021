@@ -18,7 +18,6 @@ public class Level4 {
 		List<StoreItem> items = new ArrayList<>();
 		for(String line : lines.subList(1, lines.size()))
 			items.add(parseStoreItem(line));
-		Collections.sort(items);
 		return String.format("$%.2f", solve(needed, items));
 	}
 	
@@ -28,20 +27,15 @@ public class Level4 {
 	}
 	
 	private static double solve(int needed, List<StoreItem> items) {
-//		System.out.printf("[enter] solve(%d, %s)%n", needed, items);
-		if(needed == 0) {
-//			System.out.printf("\treturning 0%n");
+		if(needed == 0)
 			return 0;
-		}
 		if(items.size() == 1) {
 			StoreItem si = items.get(0);
 			return si.price() * getPiecesToMeet(needed, si.length());
 		}
 		StoreItem fi = items.get(0);
-		int length = fi.length(), piecesNeeded = needed / length;
+		int length = fi.length(), piecesNeeded = getPiecesToMeet(needed, length);
 		double min = Double.MAX_VALUE;
-		if(piecesNeeded * length < needed)
-			piecesNeeded++;
 		for(int pieces = 0; pieces <= piecesNeeded; pieces++) {
 			double spent = pieces * fi.price();
 			double v = solve(Math.max(0, needed - pieces * length), items.subList(1, items.size()));
@@ -51,24 +45,6 @@ public class Level4 {
 		return min;
 	}
 	
-	/** Assumes items are sorted in natural order. */
-	/*
-	private static double solve(int needed, List<StoreItem> items) {
-		if(items.size() == 1) {
-			StoreItem si = items.get(0);
-			return si.price() * getPiecesToMeet(needed, si.length());
-		}
-		StoreItem fi = items.get(0);
-		int length = fi.length(), pieces = needed / length;
-		if(pieces * length == needed)
-			return pieces * fi.price();
-		int remaining = needed - pieces * length;
-		double partialPrice = pieces * fi.price();
-		double price2 = solve(remaining, items.subList(1, items.size()));
-		return Math.min(partialPrice + fi.price(), partialPrice + price2);
-	}
-	*/
-	
 	/** Returns the smallest number of pieces of {@code length} that are needed to reach or exceed {@code needed}. */
 	private static int getPiecesToMeet(int needed, int length) {
 		int pieces = needed / length;
@@ -77,8 +53,7 @@ public class Level4 {
 	
 }
 
-/** Sorted by {@link StoreItem#perUnitPrice()} and then reverse by {@link StoreItem#length()}. */
-class StoreItem implements Comparable<StoreItem> {
+class StoreItem {
 	
 	private final int length; //inches
 	private final double price; //dollars
@@ -94,17 +69,6 @@ class StoreItem implements Comparable<StoreItem> {
 	
 	public double price() {
 		return price;
-	}
-	
-	/** Returns {@code (price() / length())}.*/
-	public double perUnitPrice() {
-		return price / length;
-	}
-
-	@Override
-	public int compareTo(StoreItem o) {
-		int c = Double.compare(perUnitPrice(), o.perUnitPrice());
-		return c == 0 ? -Integer.compare(length(), o.length()) : c;
 	}
 	
 	@Override
