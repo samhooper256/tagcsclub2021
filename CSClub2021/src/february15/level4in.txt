@@ -1,5 +1,11 @@
-You want 1 piece of wood that's 10 inches long.
-4-in. for $5.46 each
-1-in. for $7.32 each
-3-in. for $4.10 each
-2-in. for $4.82 each
+You want 4 pieces of wood, each 10 inches long.
+28-in. for $6.67 each
+22-in. for $1.15 each
+25-in. for $3.36 each
+32-in. for $6.78 each
+13-in. for $2.67 each
+1-in. for $5.72 each
+9-in. for $2.56 each
+30-in. for $8.71 each
+49-in. for $5.27 each
+19-in. for $9.24 each

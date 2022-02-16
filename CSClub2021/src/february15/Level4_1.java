@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Level4 {
+public class Level4_1 {
 
 	public static void main(String[] args) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -49,31 +49,6 @@ public class Level4 {
 	private static int getPiecesToMeet(int needed, int length) {
 		int pieces = needed / length;
 		return pieces * length == needed ? pieces : pieces + 1;
-	}
-	
-}
-
-class StoreItem {
-	
-	private final int length; //inches
-	private final double price; //dollars
-	
-	public StoreItem(int length, double price) {
-		this.length = length;
-		this.price = price;
-	}
-	
-	public int length() {
-		return length;
-	}
-	
-	public double price() {
-		return price;
-	}
-	
-	@Override
-	public String toString() {
-		return String.format("%d in. for $%.2f", length(), price());
 	}
 	
 }

@@ -19,7 +19,7 @@ public class Level4Generator {
 		for(int i = 0; i < STORE_ITEMS; i++)
 			input.add(toInputLine(generateItem()));
 		IO.write("src/february15/level4in.txt", input);
-		IO.write("src/february15/level4out.txt", Level4.solve(input));
+		IO.write("src/february15/level4out.txt", Level4_1.solve(input));
 	}
 	
 	private static String firstInputLine(int N, int K) {
